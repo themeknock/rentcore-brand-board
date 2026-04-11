@@ -191,6 +191,99 @@ export default function Home() {
           </div>
         </div>
 
+        {/* ══ BRAND IN CONTEXT — MOCKUPS ══ */}
+        <Tag num="" label="Brand in Context" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+
+          {/* Business Card Mockup */}
+          <div className="card p-10 md:p-12">
+            <p className="text-[11px] text-[#94A3B8] font-semibold tracking-[0.2em] uppercase mb-6">Business Card</p>
+            <div className="relative">
+              {/* Card front */}
+              <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-lg p-8 aspect-[1.75/1] flex flex-col justify-between">
+                <div className="flex items-center gap-2">
+                  <Keystone size={16} />
+                  <span className="font-[family-name:var(--font-heading)] text-[15px] font-bold text-[#0F172A]">RentCore</span>
+                </div>
+                <div>
+                  <p className="font-[family-name:var(--font-heading)] font-semibold text-[#0F172A] text-[13px]">Dale Figger</p>
+                  <p className="text-[11px] text-[#64748B] mb-3">Founder & Managing Broker</p>
+                  <p className="text-[10px] text-[#94A3B8]">(602) 555-0180 · dale@rentcorepm.com</p>
+                  <p className="text-[10px] text-[#94A3B8]">rentcorepm.com</p>
+                </div>
+              </div>
+              {/* Card back - peeking behind */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full bg-[#0F172A] rounded-xl -z-10 flex items-center justify-center">
+                <Keystone size={24} color="white" />
+              </div>
+            </div>
+          </div>
+
+          {/* Social Media Mockup — LinkedIn */}
+          <div className="card p-10 md:p-12">
+            <p className="text-[11px] text-[#94A3B8] font-semibold tracking-[0.2em] uppercase mb-6">Social Profile</p>
+            <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-lg overflow-hidden">
+              {/* Cover */}
+              <div className="h-20 bg-gradient-to-r from-[#1D4ED8] to-[#1E40AF] relative">
+                <div className="absolute -bottom-6 left-5 w-14 h-14 rounded-full bg-white border-[3px] border-white shadow-md flex items-center justify-center">
+                  <Keystone size={22} />
+                </div>
+              </div>
+              <div className="pt-9 pb-5 px-5">
+                <p className="font-[family-name:var(--font-heading)] font-bold text-[#0F172A] text-[14px]">Rent Core Property Management</p>
+                <p className="text-[11px] text-[#64748B] mb-2">Investor-first property management · Phoenix & Tucson</p>
+                <p className="text-[10px] text-[#94A3B8]">Property Management · 1-10 employees</p>
+                <div className="flex gap-2 mt-3">
+                  <div className="px-3 py-1 rounded-full bg-[#1D4ED8] text-white text-[10px] font-semibold">Follow</div>
+                  <div className="px-3 py-1 rounded-full border border-[#E2E8F0] text-[#64748B] text-[10px] font-semibold">Visit website</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Email Signature Mockup */}
+          <div className="card p-10 md:p-12">
+            <p className="text-[11px] text-[#94A3B8] font-semibold tracking-[0.2em] uppercase mb-6">Email Signature</p>
+            <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-lg p-6">
+              <div className="border-t-2 border-[#F97316] pt-5">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#0F172A] flex items-center justify-center shrink-0">
+                    <Keystone size={18} color="white" />
+                  </div>
+                  <div>
+                    <p className="font-[family-name:var(--font-heading)] font-bold text-[#0F172A] text-[13px]">Dale Figger</p>
+                    <p className="text-[11px] text-[#64748B] mb-2">Founder & Managing Broker</p>
+                    <p className="text-[10px] text-[#94A3B8]">
+                      Rent Core Property Management<br />
+                      (602) 555-0180 · dale@rentcorepm.com<br />
+                      <span className="text-[#1D4ED8]">rentcorepm.com</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Second variant - dark */}
+            <div className="bg-[#0F172A] rounded-xl shadow-lg p-6 mt-4">
+              <div className="border-t-2 border-[#F97316] pt-5">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#F97316] flex items-center justify-center shrink-0">
+                    <Keystone size={18} color="white" />
+                  </div>
+                  <div>
+                    <p className="font-[family-name:var(--font-heading)] font-bold text-white text-[13px]">Dale Figger</p>
+                    <p className="text-[11px] text-white/50 mb-2">Founder & Managing Broker</p>
+                    <p className="text-[10px] text-white/35">
+                      Rent Core Property Management<br />
+                      (602) 555-0180 · dale@rentcorepm.com<br />
+                      <span className="text-[#F97316]">rentcorepm.com</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* ══ 05 — BRAND VOICE ══ */}
         <Tag num="05" label="Brand Voice" />
         <div className="card mb-16">
@@ -249,12 +342,24 @@ export default function Home() {
 
         {/* ══ 06 — HOMEPAGE DESIGN ══ */}
         <Tag num="06" label="Homepage Design Preview" />
-        <div className="rounded-[24px] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.12),0_16px_56px_rgba(0,0,0,0.16)] mb-16">
-          {/* Browser chrome */}
-          <div className="bg-[#1c1c28] px-5 py-3 flex items-center gap-3">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-              <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 mb-16">
+
+        {/* ── Laptop Mockup ── */}
+        <div>
+          <p className="text-[11px] text-white/15 font-semibold tracking-[0.2em] uppercase mb-4 ml-1">Desktop — 1440px</p>
+          {/* Laptop frame */}
+          <div className="bg-[#2a2a35] rounded-t-[20px] p-[3px] pb-0">
+            {/* Camera notch */}
+            <div className="flex justify-center py-2">
+              <div className="w-2 h-2 rounded-full bg-[#3a3a45]" />
+            </div>
+            {/* Screen */}
+            <div className="rounded-t-[12px] overflow-hidden">
+              {/* Browser chrome */}
+              <div className="bg-[#1c1c28] px-5 py-3 flex items-center gap-3">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                  <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
               <div className="w-3 h-3 rounded-full bg-[#28c840]" />
             </div>
             <div className="flex-1 mx-6">
@@ -448,6 +553,92 @@ export default function Home() {
               </div>
             </footer>
           </div>
+            </div>
+          </div>
+          {/* Laptop base */}
+          <div className="bg-[#2a2a35] h-4 rounded-b-[4px]" />
+          <div className="bg-[#222230] h-2 rounded-b-[12px] mx-[15%]" />
+        </div>
+
+        {/* ── Phone Mockup ── */}
+        <div>
+          <p className="text-[11px] text-white/15 font-semibold tracking-[0.2em] uppercase mb-4 ml-1">Mobile — 375px</p>
+          {/* Phone frame */}
+          <div className="bg-[#2a2a35] rounded-[36px] p-[6px] max-w-[320px]">
+            {/* Notch */}
+            <div className="flex justify-center pt-2 pb-1">
+              <div className="w-20 h-5 rounded-full bg-[#1a1a24]" />
+            </div>
+            {/* Screen */}
+            <div className="bg-white rounded-[28px] overflow-hidden h-[580px] overflow-y-auto">
+              {/* Mobile header */}
+              <header className="px-5 py-3 flex items-center justify-between border-b border-[#F1F5F9] sticky top-0 bg-white/95 backdrop-blur-sm z-10">
+                <div className="flex items-center gap-1.5">
+                  <Keystone size={12} />
+                  <span className="font-[family-name:var(--font-heading)] text-[13px] font-bold text-[#0F172A]">RentCore</span>
+                </div>
+                <button className="px-3 py-1.5 bg-[#F97316] text-white text-[10px] font-[family-name:var(--font-heading)] font-bold rounded-lg">
+                  Get Analysis
+                </button>
+              </header>
+
+              {/* Mobile hero */}
+              <div className="px-5 py-8">
+                <h1 className="font-[family-name:var(--font-heading)] text-[22px] font-extrabold text-[#0F172A] leading-[1.15] mb-4">
+                  Maximize Your Rental Income. <span className="text-[#1D4ED8]">Minimize the Headaches.</span>
+                </h1>
+                <p className="text-[12px] text-[#64748B] leading-relaxed mb-5">
+                  Phoenix & Tucson&apos;s investor-first property management company.
+                </p>
+                <div className="flex items-center gap-1.5 mb-6">
+                  {[0,1,2].map((i) => <Star key={i} className="w-3 h-3 text-amber-400 fill-amber-400" />)}
+                  <span className="text-[10px] text-[#64748B] ml-1">4.9 · Phoenix investors</span>
+                </div>
+
+                {/* Mobile calculator */}
+                <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-md overflow-hidden">
+                  <div className="h-1 bg-[#F97316]" />
+                  <div className="p-4">
+                    <p className="font-[family-name:var(--font-heading)] font-bold text-[#0F172A] text-[14px] mb-1">What&apos;s Your Property Worth?</p>
+                    <p className="text-[10px] text-[#94A3B8] mb-3">Free estimate in 60 seconds.</p>
+                    <div className="space-y-2">
+                      <div className="w-full px-3 py-2 rounded-lg border border-[#E2E8F0] text-[10px] text-[#94A3B8]">Property address</div>
+                      <div className="grid grid-cols-3 gap-1.5">
+                        {["Beds","Baths","Type"].map((l) => <div key={l} className="px-2 py-2 rounded-lg border border-[#E2E8F0] text-[10px] text-[#94A3B8] text-center">{l}</div>)}
+                      </div>
+                      <div className="w-full px-3 py-2 rounded-lg border border-[#E2E8F0] text-[10px] text-[#94A3B8]">Full name</div>
+                      <div className="w-full px-3 py-2 rounded-lg border border-[#E2E8F0] text-[10px] text-[#94A3B8]">Email</div>
+                      <div className="w-full py-2.5 bg-[#F97316] text-white text-[11px] font-bold rounded-lg text-center">Get My Free Analysis</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile trust bar */}
+              <div className="bg-[#F8FAFC] px-5 py-4 border-y border-[#F1F5F9]">
+                <div className="grid grid-cols-2 gap-3">
+                  {[{n:"150+",l:"Doors"},{n:"98%",l:"Retention"},{n:"15 Days",l:"Lease"},{n:"4.9★",l:"Rating"}].map((s) => (
+                    <div key={s.l} className="text-center">
+                      <p className="font-[family-name:var(--font-heading)] text-[16px] font-extrabold text-[#1D4ED8]">{s.n}</p>
+                      <p className="text-[9px] text-[#64748B]">{s.l}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile CTA */}
+              <div className="bg-gradient-to-br from-[#1D4ED8] to-[#1E40AF] px-5 py-8 text-center">
+                <p className="font-[family-name:var(--font-heading)] text-[16px] font-extrabold text-white mb-3 leading-tight">What Could Your Property Be Earning?</p>
+                <button className="px-5 py-2.5 bg-white text-[#1D4ED8] text-[11px] font-[family-name:var(--font-heading)] font-bold rounded-lg">Get Free Analysis</button>
+              </div>
+            </div>
+            {/* Home bar */}
+            <div className="flex justify-center py-2">
+              <div className="w-28 h-1 rounded-full bg-[#3a3a45]" />
+            </div>
+          </div>
+        </div>
+
         </div>
 
         {/* ══ BOARD FOOTER ══ */}
