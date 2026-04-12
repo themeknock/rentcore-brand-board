@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   Star, ArrowRight, Phone, Menu, X, TrendingUp, Eye, MapPin,
   Megaphone, Shield, Wallet, Wrench, BarChart3, ClipboardCheck,
@@ -17,16 +17,7 @@ function Logo({ size = 22 }: { size?: number }) {
   );
 }
 
-/* ─── Scroll Reveal ─── */
-function SR({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current; if (!el) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.style.opacity = "1"; el.style.transform = "translateY(0)"; obs.unobserve(el); } }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-    obs.observe(el); return () => obs.disconnect();
-  }, []);
-  return <div ref={ref} className={className} style={{ opacity: 0, transform: "translateY(28px)", transition: "opacity 0.7s ease-out, transform 0.7s ease-out" }}>{children}</div>;
-}
+/* SR removed — opacity:0 initial state causes invisible sections in static export */
 
 /* ═══════════════════════════════════════
    HEADER
@@ -121,7 +112,7 @@ export default function HomePage() {
         </section>
 
         {/* ═══ TRUST BAR ═══ */}
-        <SR>
+        
         <section style={{ background: "linear-gradient(to right, #F8FAFC, #fff, #F8FAFC)", borderTop: "1px solid #F1F5F9", borderBottom: "1px solid #F1F5F9" }}>
           <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-14 lg:py-16">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
@@ -134,10 +125,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ WHY RENT CORE ═══ */}
-        <SR>
+        
         <section id="owners" className="py-24 lg:py-36" style={{ background: "linear-gradient(180deg, #fff 0%, #f8faff 50%, #fff 100%)" }}>
           <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="text-center mb-16 lg:mb-24">
@@ -162,10 +153,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ SERVICES ═══ */}
-        <SR>
+        
         <section id="services" className="relative py-24 lg:py-36 overflow-hidden" style={{ background: "#0F172A" }}>
           <div className="absolute top-0 right-[20%] w-[500px] h-[500px] rounded-full blur-[120px]" style={{ background: "rgba(29,78,216,0.07)" }} />
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -191,10 +182,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ PRICING ═══ */}
-        <SR>
+        
         <section id="pricing" className="py-24 lg:py-36" style={{ background: "#fff" }}>
           <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="text-center mb-16 lg:mb-20">
@@ -233,10 +224,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ HOW IT WORKS ═══ */}
-        <SR>
+        
         <section id="how" className="py-24 lg:py-36" style={{ background: "linear-gradient(180deg, #fff 0%, #f8faff 100%)" }}>
           <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="text-center mb-16 lg:mb-24">
@@ -262,10 +253,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ ABOUT ═══ */}
-        <SR>
+        
         <section id="about" className="py-24 lg:py-36" style={{ background: "linear-gradient(180deg, #fff 0%, #F8FAFC 100%)" }}>
           <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
@@ -289,10 +280,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ AREAS SERVED ═══ */}
-        <SR>
+        
         <section id="areas" className="relative overflow-hidden">
           <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1920&h=1080&fit=crop&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0" style={{ background: "rgba(15,23,42,0.88)" }} />
@@ -313,10 +304,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ RESOURCES ═══ */}
-        <SR>
+        
         <section className="py-24 lg:py-36" style={{ background: "linear-gradient(180deg, #fff 0%, #f8faff 100%)" }}>
           <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="text-center mb-14 lg:mb-20">
@@ -342,10 +333,10 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        </SR>
+        
 
         {/* ═══ FINAL CTA ═══ */}
-        <SR>
+        
         <section id="cta" className="relative overflow-hidden">
           <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0" style={{ background: "rgba(15,23,42,0.93)" }} />
@@ -358,7 +349,7 @@ export default function HomePage() {
             <p className="text-[14px] mt-8" style={{ color: "rgba(255,255,255,0.25)" }}>Or call us: <a href="tel:+16025550180" className="underline underline-offset-4" style={{ color: "rgba(255,255,255,0.4)" }}>(602) 555-0180</a></p>
           </div>
         </section>
-        </SR>
+        
       </main>
 
       {/* ═══ FOOTER ═══ */}
