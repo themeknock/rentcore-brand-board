@@ -7,9 +7,14 @@ import {
   Calculator, Settings, ArrowUpRight, Check, Mail,
 } from "lucide-react";
 
-/* ─── Keystone Icon ─── */
-function KS({ s = 20, c = "#F97316" }: { s?: number; c?: string }) {
-  return <svg width={s} height={s * 1.08} viewBox="0 0 52 56" fill="none"><path d="M8 48L3 12C3 9.5 4.8 7.3 7.2 6.5L26 0L44.8 6.5C47.2 7.3 49 9.5 49 12L44 48C43.3 50.5 41 52 38.5 52H13.5C11 52 8.7 50.5 8 48Z" fill={c} /></svg>;
+/* ─── Wordmark Logo — Dale approved Option A (Apr 12) ─── */
+function Logo({ size = 22 }: { size?: number }) {
+  return (
+    <span className="font-[family-name:var(--font-heading)] font-extrabold tracking-tight" style={{ fontSize: `${size}px` }}>
+      <span style={{ color: "#1D4ED8" }}>Rent</span>
+      <span style={{ color: "#F97316" }}>Core</span>
+    </span>
+  );
 }
 
 /* ─── Scroll Reveal ─── */
@@ -33,7 +38,7 @@ function SiteHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style={{ background: scrolled ? "rgba(255,255,255,0.95)" : "transparent", backdropFilter: scrolled ? "blur(20px)" : "none", borderBottom: scrolled ? "1px solid #F1F5F9" : "none" }}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div className="flex items-center justify-between h-[72px] lg:h-[80px]">
-        <a href="/home" className="flex items-center gap-2.5"><KS s={22} /><span className="font-[family-name:var(--font-heading)] text-[19px] font-bold tracking-tight" style={{ color: scrolled ? "#0F172A" : "#0F172A" }}>RentCore</span></a>
+        <a href="/home" className="flex items-center"><Logo size={22} /></a>
         <nav className="hidden lg:flex items-center gap-8">{["Owners","Services","Pricing","Areas","About"].map(l => <a key={l} href={`#${l.toLowerCase()}`} className="text-[14px] font-medium transition-colors" style={{ color: "#64748B" }}>{l}</a>)}</nav>
         <div className="flex items-center gap-4">
           <a href="tel:+16025550180" className="hidden md:flex items-center gap-2 text-[14px] font-medium" style={{ color: "#334155" }}><Phone className="w-4 h-4" />(602) 555-0180</a>
@@ -361,7 +366,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 lg:py-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-14 mb-14">
             <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2.5 mb-5"><KS s={20} /><span className="font-[family-name:var(--font-heading)] text-[18px] font-bold text-white">RentCore</span></div>
+              <div className="flex items-center mb-5"><span className="font-[family-name:var(--font-heading)] text-[20px] font-extrabold tracking-tight"><span style={{ color: "#1D4ED8" }}>Rent</span><span style={{ color: "#F97316" }}>Core</span></span></div>
               <p className="text-[14px] leading-relaxed mb-6 max-w-[280px]" style={{ color: "rgba(255,255,255,0.4)" }}>We manage like owners, with you every step of the way.</p>
               <div className="space-y-3">
                 <a href="tel:+16025550180" className="flex items-center gap-2.5 text-[13px]" style={{ color: "rgba(255,255,255,0.4)" }}><Phone className="w-4 h-4 shrink-0" />(602) 555-0180</a>
