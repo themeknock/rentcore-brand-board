@@ -263,7 +263,7 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
               <div className="relative rounded-[28px] overflow-hidden" style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.08)" }}>
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&crop=face" alt="Dale Figger" className="w-full h-[400px] lg:h-[480px] object-cover" loading="lazy" />
+                <img src="/dale-figger.jpg" alt="Dale Figger — Owner & Licensed Arizona Broker" className="w-full h-[400px] lg:h-[480px] object-cover object-top" loading="lazy" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,23,42,0.6) 0%, transparent 50%)" }} />
                 <div className="absolute bottom-0 left-0 right-0 p-8"><p className="font-[family-name:var(--font-heading)] font-bold text-white text-[22px] tracking-tight">Dale Figger</p><p className="text-[14px] mt-1" style={{ color: "rgba(255,255,255,0.7)" }}>Owner & Licensed Arizona Broker</p></div>
               </div>
