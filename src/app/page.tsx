@@ -136,56 +136,174 @@ export default function Home() {
         </div>
 
         {/* ══ 04 — LOGO CONCEPTS ══ */}
-        <Tag num="04" label="Logo Concepts" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {/* Option A */}
-          <div className="card overflow-hidden">
-            <div className="bg-gradient-to-br from-[#F8FAFC] to-white p-16 md:p-20 flex items-center justify-center">
-              <h3 className="font-[family-name:var(--font-heading)] text-[56px] font-extrabold tracking-tight">
+        <Tag num="04" label="Logo Identity System" />
+
+        {/* ── OPTION A — Wordmark ── */}
+        <div className="card overflow-hidden mb-10">
+          <div className="h-1 bg-gradient-to-r from-[#1D4ED8] to-[#F97316] rounded-t-[24px]" />
+          <div className="p-12 md:p-16 lg:p-20">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full bg-[#F1F5F9] text-[#64748B] text-[11px] font-semibold">Option A</span>
+              <span className="text-[11px] text-[#94A3B8]">The Confident Wordmark</span>
+            </div>
+
+            {/* Primary logo — large display */}
+            <div className="bg-[#F8FAFC] rounded-3xl p-16 md:p-20 flex items-center justify-center mb-10 border border-[#F1F5F9] relative">
+              {/* Construction grid lines */}
+              <div className="absolute inset-12 border border-dashed border-[#E2E8F0]/50 rounded-2xl" />
+              <div className="absolute top-12 bottom-12 left-1/2 w-px border-l border-dashed border-[#E2E8F0]/50" />
+              <h3 className="font-[family-name:var(--font-heading)] text-[72px] font-extrabold tracking-[-0.02em] relative">
                 <span className="text-[#1D4ED8]">Rent</span><span className="text-[#F97316]">Core</span>
               </h3>
             </div>
-            <div className="p-10 md:p-12 border-t border-[#F1F5F9]">
-              <h4 className="font-[family-name:var(--font-heading)] font-bold text-[#0F172A] text-[18px] mb-3">The Confident Wordmark</h4>
-              <p className="text-[14px] text-[#64748B] leading-relaxed mb-8">Clean, bold wordmark. &quot;Rent&quot; in blue, &quot;Core&quot; in orange. The name IS the brand — maximum simplicity, scales everywhere.</p>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center px-5 h-12 bg-white rounded-xl border border-[#E2E8F0]">
-                  <span className="font-[family-name:var(--font-heading)] text-[14px] font-extrabold"><span className="text-[#1D4ED8]">Rent</span><span className="text-[#F97316]">Core</span></span>
+
+            <p className="text-[15px] text-[#64748B] leading-relaxed mb-10 max-w-[600px]">
+              Clean, bold wordmark with two-tone color split. &quot;Rent&quot; in primary blue establishes trust, &quot;Core&quot; in accent orange drives energy and memorability. No icon dependency — the name itself carries the brand.
+            </p>
+
+            {/* Lockup grid */}
+            <p className="text-[11px] text-[#94A3B8] font-semibold tracking-[0.2em] uppercase mb-5">Lockup Variations</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Light */}
+              <div className="bg-white rounded-2xl border border-[#E2E8F0] p-8 flex items-center justify-center min-h-[100px]">
+                <span className="font-[family-name:var(--font-heading)] text-[20px] font-extrabold tracking-tight">
+                  <span className="text-[#1D4ED8]">Rent</span><span className="text-[#F97316]">Core</span>
+                </span>
+              </div>
+              {/* Dark */}
+              <div className="bg-[#0F172A] rounded-2xl p-8 flex items-center justify-center min-h-[100px]">
+                <span className="font-[family-name:var(--font-heading)] text-[20px] font-extrabold tracking-tight">
+                  <span className="text-white">Rent</span><span className="text-[#F97316]">Core</span>
+                </span>
+              </div>
+              {/* Blue bg */}
+              <div className="bg-[#1D4ED8] rounded-2xl p-8 flex items-center justify-center min-h-[100px]">
+                <span className="font-[family-name:var(--font-heading)] text-[20px] font-extrabold tracking-tight text-white">
+                  RentCore
+                </span>
+              </div>
+              {/* Monogram */}
+              <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-8 flex items-center justify-center gap-6 min-h-[100px]">
+                <div className="w-14 h-14 rounded-2xl bg-[#1D4ED8] flex items-center justify-center">
+                  <span className="font-[family-name:var(--font-heading)] text-[22px] font-extrabold text-white">RC</span>
                 </div>
-                <div className="flex items-center justify-center px-5 h-12 bg-[#0F172A] rounded-xl">
-                  <span className="font-[family-name:var(--font-heading)] text-[14px] font-extrabold"><span className="text-white">Rent</span><span className="text-[#F97316]">Core</span></span>
+                <div className="w-14 h-14 rounded-2xl bg-[#0F172A] flex items-center justify-center">
+                  <span className="font-[family-name:var(--font-heading)] text-[22px] font-extrabold text-white">RC</span>
                 </div>
-                <div className="flex items-center justify-center w-12 h-12 bg-[#1D4ED8] rounded-xl">
-                  <span className="font-[family-name:var(--font-heading)] text-[18px] font-extrabold text-white">RC</span>
-                </div>
-                <p className="text-[11px] text-[#CBD5E1] ml-2">Light · Dark · Favicon</p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Option B — Recommended */}
-          <div className="card overflow-hidden ring-2 ring-[#F97316]/20">
-            <div className="bg-gradient-to-br from-[#F8FAFC] to-white p-16 md:p-20 flex items-center justify-center relative">
-              <span className="absolute top-5 right-5 px-3 py-1 rounded-full bg-[#F97316]/10 text-[#F97316] text-[11px] font-semibold">★ Recommended</span>
-              <div className="flex items-center gap-5">
-                <Keystone size={52} />
-                <span className="font-[family-name:var(--font-heading)] text-[48px] font-bold text-[#0F172A] tracking-tight">RentCore</span>
+        {/* ── OPTION B — Keystone Mark (Recommended) ── */}
+        <div className="card overflow-hidden ring-2 ring-[#F97316]/20 mb-10">
+          <div className="h-1.5 bg-gradient-to-r from-[#F97316] to-[#EA580C] rounded-t-[24px]" />
+          <div className="p-12 md:p-16 lg:p-20">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full bg-[#F97316]/10 text-[#F97316] text-[11px] font-bold">★ Option B — Recommended</span>
+              <span className="text-[11px] text-[#94A3B8]">The Keystone Mark</span>
+            </div>
+
+            {/* Primary logo — large display */}
+            <div className="bg-[#F8FAFC] rounded-3xl p-16 md:p-20 flex items-center justify-center mb-10 border border-[#F1F5F9] relative">
+              <div className="absolute inset-12 border border-dashed border-[#E2E8F0]/50 rounded-2xl" />
+              <div className="flex items-center gap-6 relative">
+                {/* Refined keystone */}
+                <svg width="72" height="78" viewBox="0 0 72 78" fill="none">
+                  <path d="M11 67L5 17C4.5 13.5 6.5 10 10 8.7L36 0L62 8.7C65.5 10 67.5 13.5 67 17L61 67C60 71 57 74 53 74H19C15 74 12 71 11 67Z" fill="url(#ksMain)" />
+                  <path d="M28 52L24 26H30L36 46L42 26H48L44 52H38L36 42L34 52H28Z" fill="white" fillOpacity="0.15" />
+                  <defs>
+                    <linearGradient id="ksMain" x1="36" y1="0" x2="36" y2="74">
+                      <stop stopColor="#F97316" />
+                      <stop offset="1" stopColor="#EA580C" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span className="font-[family-name:var(--font-heading)] text-[64px] font-bold text-[#0F172A] tracking-[-0.02em]">RentCore</span>
               </div>
             </div>
-            <div className="p-10 md:p-12 border-t border-[#F1F5F9]">
-              <h4 className="font-[family-name:var(--font-heading)] font-bold text-[#0F172A] text-[18px] mb-3">The Keystone Mark</h4>
-              <p className="text-[14px] text-[#64748B] leading-relaxed mb-8">Geometric keystone icon + wordmark. The keystone is the center stone in an arch — the piece that holds everything together.</p>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center gap-2 px-5 h-12 bg-white rounded-xl border border-[#E2E8F0]">
-                  <Keystone size={14} /><span className="font-[family-name:var(--font-heading)] text-[13px] font-bold text-[#0F172A]">RentCore</span>
+
+            <p className="text-[15px] text-[#64748B] leading-relaxed mb-6 max-w-[640px]">
+              The keystone is the center stone in an arch — the single piece that holds the entire structure together. Rent Core is that piece for your investment. The geometric icon conveys <span className="text-[#334155] font-medium">stability, upward growth, and architectural precision</span>.
+            </p>
+            <p className="text-[13px] text-[#94A3B8] leading-relaxed mb-10 max-w-[640px]">
+              The icon works independently at any size — from 16px favicon to building signage. The gradient adds depth while maintaining a flat, modern aesthetic.
+            </p>
+
+            {/* Lockup grid */}
+            <p className="text-[11px] text-[#94A3B8] font-semibold tracking-[0.2em] uppercase mb-5">Lockup Variations</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+              {/* Horizontal - Light */}
+              <div className="bg-white rounded-2xl border border-[#E2E8F0] p-8 flex items-center justify-center gap-3 min-h-[100px]">
+                <Keystone size={22} />
+                <span className="font-[family-name:var(--font-heading)] text-[18px] font-bold text-[#0F172A] tracking-tight">RentCore</span>
+              </div>
+              {/* Horizontal - Dark */}
+              <div className="bg-[#0F172A] rounded-2xl p-8 flex items-center justify-center gap-3 min-h-[100px]">
+                <Keystone size={22} />
+                <span className="font-[family-name:var(--font-heading)] text-[18px] font-bold text-white tracking-tight">RentCore</span>
+              </div>
+              {/* Stacked */}
+              <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-8 flex flex-col items-center justify-center gap-2 min-h-[100px]">
+                <Keystone size={28} />
+                <span className="font-[family-name:var(--font-heading)] text-[14px] font-bold text-[#0F172A] tracking-tight">RentCore</span>
+              </div>
+              {/* Icon only */}
+              <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-8 flex items-center justify-center gap-5 min-h-[100px]">
+                <div className="w-14 h-14 rounded-2xl bg-[#F97316] flex items-center justify-center shadow-lg shadow-[#F97316]/20">
+                  <Keystone size={26} color="white" />
                 </div>
-                <div className="flex items-center justify-center gap-2 px-5 h-12 bg-[#0F172A] rounded-xl">
-                  <Keystone size={14} /><span className="font-[family-name:var(--font-heading)] text-[13px] font-bold text-white">RentCore</span>
+                <div className="w-14 h-14 rounded-2xl bg-[#0F172A] flex items-center justify-center">
+                  <Keystone size={26} color="#F97316" />
                 </div>
-                <div className="flex items-center justify-center w-12 h-12 bg-[#F97316] rounded-xl">
-                  <Keystone size={22} color="white" />
+              </div>
+            </div>
+
+            {/* Clear space & minimum size */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Clear space */}
+              <div className="bg-[#F8FAFC] rounded-2xl border border-[#F1F5F9] p-8">
+                <p className="text-[11px] text-[#94A3B8] font-semibold tracking-[0.2em] uppercase mb-5">Clear Space</p>
+                <div className="flex items-center justify-center">
+                  <div className="relative inline-flex items-center gap-3 p-6">
+                    {/* Clear space indicators */}
+                    <div className="absolute inset-0 border-2 border-dashed border-[#1D4ED8]/20 rounded-xl" />
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-[9px] text-[#1D4ED8]/40 font-mono">x</div>
+                    <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] text-[#1D4ED8]/40 font-mono">x</div>
+                    <div className="absolute top-1/2 -translate-y-1/2 -left-4 text-[9px] text-[#1D4ED8]/40 font-mono">x</div>
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-4 text-[9px] text-[#1D4ED8]/40 font-mono">x</div>
+                    <Keystone size={20} />
+                    <span className="font-[family-name:var(--font-heading)] text-[16px] font-bold text-[#0F172A]">RentCore</span>
+                  </div>
                 </div>
-                <p className="text-[11px] text-[#CBD5E1] ml-2">Light · Dark · Favicon</p>
+                <p className="text-[11px] text-[#94A3B8] text-center mt-6">Minimum clear space = height of keystone icon (x) on all sides</p>
+              </div>
+
+              {/* Minimum sizes */}
+              <div className="bg-[#F8FAFC] rounded-2xl border border-[#F1F5F9] p-8">
+                <p className="text-[11px] text-[#94A3B8] font-semibold tracking-[0.2em] uppercase mb-5">Minimum Sizes</p>
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Keystone size={10} />
+                      <span className="font-[family-name:var(--font-heading)] text-[9px] font-bold text-[#0F172A]">RentCore</span>
+                    </div>
+                    <span className="text-[10px] text-[#94A3B8] font-mono">Digital — 80px wide</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="w-8 h-8 rounded-lg bg-[#F97316] flex items-center justify-center">
+                      <Keystone size={14} color="white" />
+                    </div>
+                    <span className="text-[10px] text-[#94A3B8] font-mono">Favicon — 16×16px</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <Keystone size={14} />
+                      <span className="font-[family-name:var(--font-heading)] text-[12px] font-bold text-[#0F172A]">RentCore</span>
+                    </div>
+                    <span className="text-[10px] text-[#94A3B8] font-mono">Print — 25mm wide</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

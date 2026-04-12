@@ -29,12 +29,12 @@ export default function CanvasWrapper({ children }: { children: React.ReactNode 
 
   // Load comments from API
   useEffect(() => {
-    fetch("/api/comments").then(r => r.json()).then(setComments).catch(() => {});
+    fetch("https://rentcore-comments-api.themeknock.workers.dev/comments").then(r => r.json()).then(setComments).catch(() => {});
     const name = localStorage.getItem("rentcore-author");
     if (name) setAuthorName(name);
     // Poll for new comments every 10 seconds
     const interval = setInterval(() => {
-      fetch("/api/comments").then(r => r.json()).then(setComments).catch(() => {});
+      fetch("https://rentcore-comments-api.themeknock.workers.dev/comments").then(r => r.json()).then(setComments).catch(() => {});
     }, 10000);
     return () => clearInterval(interval);
   }, []);
@@ -90,13 +90,13 @@ export default function CanvasWrapper({ children }: { children: React.ReactNode 
     setComments((prev) => [...prev, comment]);
     setPendingPin(null);
     setNewText("");
-    await fetch("/api/comments", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(comment) });
+    await fetch("https://rentcore-comments-api.themeknock.workers.dev/comments", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(comment) });
   };
 
   const deleteComment = async (id: string) => {
     setComments((prev) => prev.filter((c) => c.id !== id));
     setActiveComment(null);
-    await fetch("/api/comments", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
+    await fetch("https://rentcore-comments-api.themeknock.workers.dev/comments", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
   };
 
   const toggleResolve = async (id: string) => {
@@ -104,7 +104,7 @@ export default function CanvasWrapper({ children }: { children: React.ReactNode 
     if (!c) return;
     const resolved = !c.resolved;
     setComments((prev) => prev.map((c) => c.id === id ? { ...c, resolved } : c));
-    await fetch("/api/comments", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, resolved }) });
+    await fetch("https://rentcore-comments-api.themeknock.workers.dev/comments", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, resolved }) });
   };
 
   return (
