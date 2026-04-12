@@ -48,6 +48,8 @@ export default function HomePage() {
   return (
     <>
       <style>{`
+        html, body { overflow: auto !important; height: auto !important; background: #fff !important; color: #0F172A !important; }
+        input::placeholder, select { color: #94A3B8 !important; }
         .gradient-text { background: linear-gradient(135deg, #1D4ED8, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .reveal { animation: revUp 0.7s ease-out both; }
         @keyframes revUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
@@ -97,8 +99,8 @@ export default function HomePage() {
                         <input type="text" placeholder="Enter your property address" className="w-full px-5 py-4 rounded-2xl text-[15px] outline-none transition-all" style={{ border: "1px solid #E2E8F0", color: "#0F172A", background: "#F8FAFC" }} />
                         <div className="grid grid-cols-3 gap-3">{["Bedrooms","Bathrooms","Type"].map(l => <select key={l} defaultValue="" className="px-4 py-4 rounded-2xl text-[14px] outline-none transition-all appearance-none" style={{ border: "1px solid #E2E8F0", color: "#64748B", background: "#F8FAFC" }}><option value="" disabled>{l}</option><option>1</option><option>2</option><option>3</option></select>)}</div>
                         <div className="grid grid-cols-2 gap-3">
-                          <input type="text" placeholder="Full name" className="w-full px-5 py-4 rounded-2xl text-[15px] outline-none transition-all" style={{ border: "1px solid #E2E8F0", background: "#F8FAFC" }} />
-                          <input type="email" placeholder="Email" className="w-full px-5 py-4 rounded-2xl text-[15px] outline-none transition-all" style={{ border: "1px solid #E2E8F0", background: "#F8FAFC" }} />
+                          <input type="text" placeholder="Full name" className="w-full px-5 py-4 rounded-2xl text-[15px] outline-none transition-all" style={{ border: "1px solid #E2E8F0", background: "#F8FAFC", color: "#0F172A" }} />
+                          <input type="email" placeholder="Email" className="w-full px-5 py-4 rounded-2xl text-[15px] outline-none transition-all" style={{ border: "1px solid #E2E8F0", background: "#F8FAFC", color: "#0F172A" }} />
                         </div>
                         <button type="submit" className="w-full py-4 text-white font-[family-name:var(--font-heading)] font-bold text-[15px] rounded-2xl transition-all hover:-translate-y-0.5 cursor-pointer" style={{ background: "#F97316", boxShadow: "0 8px 24px rgba(249,115,22,0.25)" }}>Get My Free Analysis</button>
                       </form>
