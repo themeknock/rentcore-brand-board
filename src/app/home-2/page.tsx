@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroV2 from "@/components/v2/HeroV2";
 import TrustBar from "@/components/TrustBar";
-import WhyRentCore from "@/components/WhyRentCore";
+import WhyRentCoreV2 from "@/components/v2/WhyRentCoreV2";
 import Services from "@/components/Services";
+import TestimonialSection from "@/components/v2/TestimonialSection";
 import Pricing from "@/components/Pricing";
-import HowItWorks from "@/components/HowItWorks";
+import PhotoBreak from "@/components/v2/PhotoBreak";
+import HowItWorksV2 from "@/components/v2/HowItWorksV2";
 import About from "@/components/About";
 import AreasServed from "@/components/AreasServed";
 import TenantHero from "@/components/TenantHero";
@@ -13,42 +15,36 @@ import TenantActions from "@/components/TenantActions";
 import Resources from "@/components/Resources";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
-import Properties from "@/components/Properties";
-import OwnerPortal from "@/components/OwnerPortal";
-import Testimonials from "@/components/Testimonials";
-
-import Comparison from "@/components/Comparison";
-import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
 
-export default function Home() {
+export default function Home2() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <HeroV2 />
         <ScrollReveal distance={30} duration={700}>
           <TrustBar />
         </ScrollReveal>
-        <ScrollReveal distance={40} duration={800}>
-          <Properties />
+        <ScrollReveal direction="right" distance={50} duration={900}>
+          <WhyRentCoreV2 />
         </ScrollReveal>
-        <WhyRentCore />
-        <ScrollReveal distance={40} duration={800}>
-          <Comparison />
-        </ScrollReveal>
-        <ScrollReveal distance={40} duration={800}>
-          <OwnerPortal />
-        </ScrollReveal>
-        <ScrollReveal distance={40} duration={800}>
+        <ScrollReveal distance={40} duration={800} stagger staggerDelay={150}>
           <Services />
         </ScrollReveal>
-        <Testimonials />
+        <ScrollReveal distance={30} duration={700}>
+          <TestimonialSection />
+        </ScrollReveal>
         <ScrollReveal direction="left" distance={40} duration={800}>
           <Pricing />
         </ScrollReveal>
-        <HowItWorks />
-        <About />
+        <PhotoBreak />
+        <ScrollReveal distance={50} duration={900}>
+          <HowItWorksV2 />
+        </ScrollReveal>
+        <ScrollReveal direction="right" distance={40} duration={800}>
+          <About />
+        </ScrollReveal>
         <ScrollReveal distance={40} duration={800}>
           <AreasServed />
         </ScrollReveal>
@@ -65,9 +61,8 @@ export default function Home() {
           <Resources />
         </ScrollReveal>
         <ScrollReveal distance={40} duration={800}>
-          <FAQ />
+          <FinalCTA />
         </ScrollReveal>
-        <FinalCTA />
       </main>
       <Footer />
     </>

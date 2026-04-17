@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html { scroll-behavior: smooth; }
+
+:root {
+  --c-bg: #1A2030; --c-bg2: #141A28; --c-card: #222838; --c-inp: #2A3042;
+  --c-sage: #5B8F8B; --c-copr: #D4845A; --c-head: #F0EDE8; --c-body: #B0B8C8;
+  --c-mut: #6E7A8E; --c-bd: #2E3648; --c-ok: #6BBF8A; --c-foot: #101620;
+  --c-header-bg: #1A2030f2; --c-badge-bg: #222838cc;
+  --c-grad: linear-gradient(135deg, #5B8F8B, #7AB5B0);
+  --c-license-bg: #0D0E12;
+  --c-areas-overlay: rgba(20,26,40,0.92);
+  --c-cta-overlay: rgba(20,26,40,0.95);
+  --c-trust-bg: #141A28;
+  --c-card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --c-icon-bg: rgba(212,132,90,0.18);
+  --c-step-bg: #222838;
+  --c-hero-img: 0.35;
+}
+
+.light-theme {
+  --c-bg: #FAFBF9; --c-bg2: #F0F2EE; --c-card: #FFFFFF; --c-inp: #F4F5F2;
+  --c-sage: #4D7F7B; --c-copr: #C47A4E; --c-head: #1A2030; --c-body: #555E5C;
+  --c-mut: #8E9690; --c-bd: #DFE2DC; --c-ok: #5AAF7A; --c-foot: #1A2030;
+  --c-header-bg: #FAFBf9f2; --c-badge-bg: #FFFFFFcc;
+  --c-grad: linear-gradient(135deg, #4D7F7B, #3D6F6B);
+  --c-license-bg: #F2F0EC;
+  --c-areas-overlay: rgba(250,251,249,0.92);
+  --c-cta-overlay: rgba(26,32,48,0.88);
+  --c-trust-bg: #F0F2EE;
+  --c-card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 0 0 1px #DFE2DC;
+  --c-icon-bg: rgba(196,122,78,0.12);
+  --c-step-bg: #FFFFFF;
+  --c-hero-img: 0.08;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background: var(--c-bg);
+  color: var(--c-head);
+  transition: background 0.5s, color 0.5s;
+}
+
+::selection { background: var(--c-sage); color: white; }
+
+.gradient-text {
+  background: var(--c-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Subtle grain texture ── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Hero animations handled by GSAP timeline in Hero.tsx */
+
+/* ── Hero floating decorations ── */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.hero-float { animation: heroFloat 6s ease-in-out infinite; }
+.hero-float-delayed { animation: heroFloat 7s ease-in-out 2s infinite; }
+
+/* ── Smooth hover lift for cards ── */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Counter animation for stats ── */
+@keyframes countPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
