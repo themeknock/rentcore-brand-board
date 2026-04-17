@@ -680,7 +680,7 @@ export default function V9() {
                 <p className="font-[family-name:var(--font-body)] text-[18px] italic" style={{ color: C.black }}>&ldquo;{tagline}&rdquo;</p>
               </div>
               <div className="rounded-xl overflow-hidden" style={{ minHeight: "350px" }}>
-                <img src="/dale-figger.jpg" alt="Dale Figger — Founder of Rent Core" className="w-full h-full min-h-[350px] object-cover object-top" loading="lazy" />
+                <img src="/dale-figger-1776461333.jpg" alt="Dale Figger — Founder of Rent Core" className="w-full h-full min-h-[350px] object-cover object-top" loading="lazy" />
               </div>
             </div>
           </div>
